@@ -1,0 +1,39 @@
+<h1>Crear Usuario</h1>
+<form [formGroup]="userForm" (ngSubmit)="onSubmit()">
+  <label for="username">Nombre de usuario:</label>
+  <input type="text" id="username" formControlName="username">
+  <div *ngIf="userForm.get('username')?.invalid && (userForm.get('username')?.touched || submitted)">
+    <div *ngIf="userForm.get('username')?.errors?.['required']">El nombre de usuario es obligatorio.</div>
+  </div>
+  <br>
+
+  <label for="correo">Correo electrónico (ups.edu.ec):</label>
+  <input type="email" id="correo" formControlName="correo">
+  <div *ngIf="userForm.get('correo')?.invalid && (userForm.get('correo')?.touched || submitted)">
+    <div *ngIf="userForm.get('correo')?.errors?.['required']">El correo electrónico es obligatorio.</div>
+    <div *ngIf="userForm.get('correo')?.errors?.['correo']">El correo electrónico no es válido.</div>
+  </div>
+  <br>
+
+  <label for="contraseña">Contraseña:</label>
+  <input type="password" id="contraseña" formControlName="contraseña">
+  <div *ngIf="userForm.get('contraseña')?.invalid && (userForm.get('contraseña')?.touched || submitted)">
+    <div *ngIf="userForm.get('contraseña')?.errors?.['required']">La contraseña es obligatoria.</div>
+  </div>
+  <br>
+
+  <label for="cargo">cargo:</label>
+  <select name="cargo" id="cargo" formControlName="cargo" (change)="validateTipo()">
+    <option value="Escoger el cargo" disabled selected>Selecciona un cargo</option>
+    <option value="OPERADOR">OPERADOR</option>
+    <option value="ADMIN">ADMIN</option>
+  </select>
+  <div *ngIf="tipoInvalid && (userForm.get('tipo')?.touched || submitted)">
+    Debe seleccionar un tipo válido.
+  </div>
+  <br>
+  <br>
+
+  <input type="submit" value="Crear Usuario">
+  <br>
+</form>

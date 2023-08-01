@@ -1,0 +1,157 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 20px;
+    background-color: #f8f8f8;
+    color: #333;
+  }
+  
+  .container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  
+  .column {
+    width: 50%;
+    padding: 10px;
+  }
+  
+  h1 {
+    text-align: center;
+    margin-bottom: 30px;
+  }
+  
+  h2 {
+    margin-top: 0;
+    color: #007BFF;
+    font-size: 24px;
+  }
+  
+  p {
+    line-height: 1.6;
+  }
+  
+  /* Estilos para los enlaces */
+  a {
+    color: #007BFF;
+    text-decoration: none;
+    transition: color 0.3s ease;
+  }
+  
+  a:hover {
+    color: #0056b3;
+  }
+  
+  /* Estilos para los efectos de tarjeta en las columnas */
+  .column {
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+  }
+  
+  .column:hover {
+    transform: translateY(-5px);
+  }
+  
+  /* Estilos para el encabezado */
+  header {
+    background-color: #007BFF;
+    color: #fff;
+    padding: 10px 0;
+    text-align: center;
+    border-radius: 8px;
+    margin-bottom: 30px;
+  }
+  
+  /* Estilos para la sección de información */
+  .info-section {
+    background-color: #f8f8f8;
+    padding: 20px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+  }
+  
+  /* Estilos para la sección de resumen de sensores */
+  .sensor-summary {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+    font-weight: bold;
+  }
+  
+  .sensor-summary span {
+    color: #007BFF;
+  }
+  
+  /* Estilos para el pie de página */
+  footer {
+    text-align: center;
+    margin-top: 30px;
+    padding: 10px;
+    background-color: #007BFF;
+    color: #fff;
+    border-radius: 8px;
+  }
+  img {
+    max-width: 150px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    margin-bottom: 10px;
+}
+  @media screen and (max-width: 768px) {
+    .column {
+      width: 100%;
+    }
+  }
+  .content {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.text-section {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.text-section p {
+    line-height: 1.6;
+}
+
+.image-section {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.image-section img {
+    max-width: 300px;
+}
+
+.contenedor {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.framework-section {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.framework-section h2 {
+    color: #007BFF;
+    font-size: 28px;
+    margin-bottom: 10px;
+}
+
+.framework-section img {
+    width: 200px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+}
+
+.framework-section p {
+    line-height: 1.6;
+}

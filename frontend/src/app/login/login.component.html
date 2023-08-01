@@ -1,0 +1,17 @@
+<form [formGroup]="loginForm" (ngSubmit)="login()">
+  <label for="email">Correo electrónico (ups.edu.ec):</label>
+  <input type="email" id="email" formControlName="correo" required>
+  <div *ngIf="loginForm.get('correo')?.invalid && (loginForm.get('correo')?.touched || submitted)">
+    <div *ngIf="loginForm.get('correo')?.errors?.['required']">El correo electrónico es obligatorio.</div>
+    <div *ngIf="loginForm.get('correo')?.errors?.['email']">El correo electrónico no es válido.</div>
+  </div>
+  <br>
+  <label for="password">Contraseña:</label>
+  <input type="password" id="password" formControlName="contraseña" required>
+  <div *ngIf="loginForm.get('contraseña')?.invalid && (loginForm.get('contraseña')?.touched || submitted)">
+    <div *ngIf="loginForm.get('contraseña')?.errors?.['required']">La contraseña es obligatoria.</div>
+    <div *ngIf="loginForm.get('contraseña')?.errors?.['minlength']">La contraseña debe superar los 6 caracteres.</div>
+  </div>
+  <br>
+  <input type="submit" value="Iniciar sesión">
+</form>

@@ -1,0 +1,18 @@
+.footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #f0f0f0;
+    padding: 5px;
+    margin-top: 10px;
+  }
+  
+  .integrantes-section {
+    flex: 1;
+  }
+  
+  .image-section {
+    flex: 1;
+    text-align: right; 
+  }
+  

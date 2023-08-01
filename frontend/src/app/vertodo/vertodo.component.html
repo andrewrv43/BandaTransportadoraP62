@@ -1,0 +1,46 @@
+
+
+<table class="table">
+    <thead>
+      <tr>
+        <th scope="col">USERNAME</th>
+        <th scope="col">CORREO</th>
+        <th scope="col">CARGO</th>
+        <th scope="col">EDITAR</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let users of usuarios">
+        <th scope="row">{{users.username}}</th>
+        <td>{{users.correo}}</td>
+        <td>{{users.cargo}}</td>
+        <td><button  (click)="editarUsuario(users.correo)" class="btn btn-primary">EDITAR</button></td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div *ngIf="showForm">
+    <h2>Editar Usuario</h2>
+    <form [formGroup]="userForm">
+      <label for="username">Nombre de usuario:</label>
+      <input type="text" id="username" formControlName="username">
+      <label for="password">Contraseña:</label>
+      <input type="password" id="contraseña" formControlName="contraseña">
+      <label for="cargo">Cargo:</label>
+      <select name="cargo" id="cargo" formControlName="cargo">
+        <option value="Escoger el cargo" disabled selected>Selecciona un cargo</option>
+        <option value="OPERADOR">OPERADOR</option>
+        <option value="ADMINISTRADOR">ADMIN</option>
+      </select>
+      <br>
+      <button type="button" (click)="onSubmit()" class="btn-actualizar">ACTUALIZAR</button>
+      <button type="button" (click)="asegurar()" class="btn-eliminar">ELIMINAR</button>
+      <div *ngIf="secure">
+        <br>
+        <br>
+        <h2>SEGURO QUIERES ELIMINAR EL USUARIO?</h2>
+        <br>
+        <button type="button" (click)="eliminarUsuario()" class="btn-actualizar">SI</button>
+        <button type="button" (click)="no()" class="btn-eliminar">NO</button></div>
+    </form>
+  </div>
